@@ -6,7 +6,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/Home';
 import Splash from './src/Splash';
 import { useFonts } from 'expo-font';
-import SignIn from './src/SignIn';
+import SignIn from './src/SignInPages/SignIn';
+import SPLogin from './src/SPLogin';
+import Login from './src/SignInPages/Login';
 
 
 export default function App() {
@@ -24,6 +26,7 @@ export default function App() {
       <Stack.Navigator initialRouteName='Splash' screenOptions={{headerShown:false}}>
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Splash" component={Splash} />
+        <Stack.Screen name='SPLogin' component={SPLogin}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
