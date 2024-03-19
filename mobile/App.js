@@ -9,6 +9,12 @@ import { useFonts } from 'expo-font';
 import SignIn from './src/SignInPages/SignIn';
 import SPLogin from './src/SPLogin';
 import Login from './src/SignInPages/Login';
+import CustomerLogin from './src/SignInPages/CustomerLogin';
+import ServiceProviderLogin from './src/SignInPages/ServiceProviderLogin';
+import CustomerOTP from './src/SignInPages/CustomerOTP';
+import ServiceProviderOTP from './src/SignInPages/ServiceProviderOTP';
+import CustomerForgotPassword from './src/SignInPages/CustomerForgotPassword';
+import ServiceProviderForgotPassword from './src/SignInPages/ServiceProviderForgotPassword';
 
 
 export default function App() {
@@ -23,10 +29,16 @@ export default function App() {
   });
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Splash' screenOptions={{headerShown:false}}>
+      <Stack.Navigator initialRouteName='Splash' screenOptions={{ headerShown: false }}>
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="Splash" component={Splash} />
-        <Stack.Screen name='SPLogin' component={SPLogin}/>
+        <Stack.Screen name='SPLogin' component={SPLogin} />
+        <Stack.Screen name='CustomerLogin' component={CustomerLogin} />
+        <Stack.Screen name='ServiceProviderLogin' component={ServiceProviderLogin} />
+        <Stack.Screen name='CustomerOTP' component={CustomerOTP} />
+        <Stack.Screen name='ServiceProviderOTP' component={ServiceProviderOTP} />
+        <Stack.Screen name='CustomerForgotPassword' component={CustomerForgotPassword} />
+        <Stack.Screen name='ServiceProviderForgotPassword' component={ServiceProviderForgotPassword} />
       </Stack.Navigator>
     </NavigationContainer>
   );
