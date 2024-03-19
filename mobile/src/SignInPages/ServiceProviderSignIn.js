@@ -77,7 +77,7 @@ const ServiceProviderSignIn = ({ toggleScreen }) => {
                             </View>
                             <TouchableOpacity style={styles.googleSignupBtn}>Continue with Google</TouchableOpacity>
                             <View style={styles.loginAlt}>
-                                <Text>Already Have An Account? Login</Text>
+                                <Text>Already Have An Account? <Text style={styles.bold}>Login </Text></Text>
                             </View>
                         </View>
                     </View>
@@ -276,5 +276,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         alignItems: 'center',
         marginBottom: 61,
+    },
+    bold: {
+        fontWeight: 700,
+        borderBlockEndColor: Colors.BLACK,
+        borderBottomWidth: 1,
     }
 });

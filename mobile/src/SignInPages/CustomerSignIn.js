@@ -46,7 +46,7 @@ const CustomerSignIn = ({ toggleScreen }) => {
                         <View style={styles.modalView}>
                             <Image
                                 source={require('../../assets/CloseButton.png')} onClick={() => setModalVisible(!modalVisible)} style={styles.closeBtn}
-                                // style={{ width: 20, height: 20, marginRight: 10 }}
+                            // style={{ width: 20, height: 20, marginRight: 10 }}
                             />
                             {/* <AntDesign name="closecircleo" size={40} color={Colors.LIGHTGRAY} onPress={() => setModalVisible(!modalVisible)} style={styles.closeBtn} /> */}
                             <View style={styles.formView}>
@@ -75,7 +75,7 @@ const CustomerSignIn = ({ toggleScreen }) => {
                             </View>
                             <TouchableOpacity style={styles.googleSignupBtn}>Continue with Google</TouchableOpacity>
                             <View style={styles.loginAlt}>
-                                <Text>Already Have An Account? Login</Text>
+                                <Text style={styles.signinALtText}>Already Have An Account? <Text style={styles.bold}>Login </Text></Text>
                             </View>
                         </View>
                     </View>
@@ -276,5 +276,17 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         alignItems: 'center',
         marginBottom: 61,
+    },
+    signinALttext:{
+        color: Colors.GRAY3,
+        fontFamily: 'Inter',
+        fontSize: 12
+    },
+    bold: {
+        fontWeight: 700,
+        color: Colors.BLACK,
+        borderBlockEndColor: Colors.BLACK,
+        borderBottomWidth: 1,
+        fontFamily: 'Inter',
     }
 });
