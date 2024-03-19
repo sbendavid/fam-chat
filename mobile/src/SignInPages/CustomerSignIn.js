@@ -4,7 +4,6 @@ import { View, Text, Button, StyleSheet, Image, Modal, TextInput } from 'react-n
 import { TouchableOpacity } from 'react-native';
 import Colors from '../../Utils/Colors';
 import { AntDesign } from '@expo/vector-icons';
-import Signing from './SignIn';
 
 const CustomerSignIn = ({ toggleScreen }) => {
     const [passwordVisible, setPasswordVisible] = useState(false);

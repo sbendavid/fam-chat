@@ -15,6 +15,7 @@ import CustomerOTP from './src/SignInPages/CustomerOTP';
 import ServiceProviderOTP from './src/SignInPages/ServiceProviderOTP';
 import CustomerForgotPassword from './src/SignInPages/CustomerForgotPassword';
 import ServiceProviderForgotPassword from './src/SignInPages/ServiceProviderForgotPassword';
+import CustomerUpdateProfile from './src/CustomerUpdateProfile';
 
 
 export default function App() {
@@ -39,6 +40,7 @@ export default function App() {
         <Stack.Screen name='ServiceProviderOTP' component={ServiceProviderOTP} />
         <Stack.Screen name='CustomerForgotPassword' component={CustomerForgotPassword} />
         <Stack.Screen name='ServiceProviderForgotPassword' component={ServiceProviderForgotPassword} />
+        <Stack.Screen name='CustomerUpdateProfile' component={CustomerUpdateProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

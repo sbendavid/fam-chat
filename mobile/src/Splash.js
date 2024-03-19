@@ -7,13 +7,14 @@ import Colors from '../Utils/Colors';
 export default function Splash({ navigation }) {
     useEffect(()=> {
         setTimeout(()=> {
-            navigation.navigate('SignIn')
+            // navigation.navigate('SignIn')
             // navigation.navigate('CustomerLogin')
             // navigation.navigate('ServiceProviderLogin')
             // navigation.navigate('CustomerOTP')
             // navigation.navigate('ServiceProviderOTP')
             // navigation.navigate('CustomerForgotPassword')
             // navigation.navigate('ServiceProviderForgotPassword')
+            navigation.navigate('CustomerUpdateProfile')
         }, 2500)
     })
     return (
