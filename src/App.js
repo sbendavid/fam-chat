@@ -1,52 +1,23 @@
-// frontend/src/App.js
-import React, { useEffect, useState } from "react";
-import io from "socket.io-client";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./screens/LandingPage";
+import Header from "./components/Header";
+import SignUp from "./screens/RegisterScreen";
+import Login from "./screens/LoginScreen";
+import ChatComponent from "./components/ChatComponent";
 
-const socket = io("http://localhost:3000");
-
-function App() {
-  const [messages, setMessages] = useState([]);
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    // Listen for incoming messages
-    socket.on("receiveMessage", (data) => {
-      setMessages((prevMessages) => [...prevMessages, data]);
-    });
-
-    // Clean up the connection when the component unmounts
-    return () => {
-      socket.off("receiveMessage");
-    };
-  }, []);
-
-  const sendMessage = () => {
-    if (message.trim()) {
-      // Send message to the server
-      socket.emit("sendMessage", message);
-      setMessage("");
-    }
-  };
-
+const App = () => {
   return (
-    <div>
-      <h1>Chat App</h1>
-      <ul>
-        {messages.map((msg, index) => (
-          <li key={index}>
-            {msg.senderId}: {msg.message}
-          </li>
-        ))}
-      </ul>
-      <input
-        type="text"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder="Type a message"
-      />
-      <button onClick={sendMessage}>Send</button>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/chat" element={<ChatComponent />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
