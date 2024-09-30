@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUser } from "../reducers/userReducers";
-import { useNavigate } from "react-router-dom";
 
-const SignUp = () => {
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import { Form, Button, Row, Col } from "react-bootstrap";
+
+import { registerUser } from "../reducers/userReducers";
+
+import Loader from "../components/Loader";
+import Message from "../components/Message";
+import FormContainer from "../components/FormContainer";
+
+const RegisterScreen = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -26,34 +35,45 @@ const SignUp = () => {
   }, [userInfo, navigate]);
 
   return (
-    <div>
+    <FormContainer>
       <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username: </label>
-          <input
-            type="text"
+      {error && <Message variant="danger">{error}</Message>}
+      {loading && <Loader />}
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="username">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            required
+            type="name"
+            placeholder="Enter username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+
+        <Form.Group controlId="password">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
             required
-          />
-        </div>
-        <div>
-          <label>Password: </label>
-          <input
             type="password"
+            placeholder="Enter Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit" disabled={loading}>
-          {loading ? "Signing Up..." : "Sign Up"}
-        </button>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-      </form>
-    </div>
+          ></Form.Control>
+        </Form.Group>
+
+        <Button type="submit" variant="primary">
+          Register
+        </Button>
+      </Form>
+
+      <Row className="py-3">
+        <Col>
+          Have an Account? <Link to="/login">Sign In</Link>
+        </Col>
+      </Row>
+    </FormContainer>
   );
 };
 
-export default SignUp;
+export default RegisterScreen;
