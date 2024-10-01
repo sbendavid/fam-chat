@@ -9,15 +9,12 @@ const ChatComponent = ({ userId, receiverId }) => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    // Listen for incoming messages
     socket.on("messageReceived", (newMessage) => {
-      // Updated here
       setMessages((prevMessages) => [...prevMessages, newMessage]);
     });
 
     return () => {
-      // Cleanup on component unmount
-      socket.off("messageReceived"); // Updated here
+      socket.off("messageReceived");
     };
   }, []);
 

@@ -10,6 +10,7 @@ import LandingPage from "./screens/LandingPage";
 import RegisterScreen from "./screens/RegisterScreen";
 import LoginScreen from "./screens/LoginScreen";
 import HomeScreen from "./screens/HomeScreen";
+import ChatScreen from "./screens/ChatScreen";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/signup" element={<RegisterScreen />} />
             <Route path="/login" element={<LoginScreen />} />
             <Route path="home" element={<HomeScreen />} />
+            <Route path="chat" element={<ChatScreen />} />
           </Routes>
         </Container>
       </main>

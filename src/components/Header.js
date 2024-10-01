@@ -47,6 +47,9 @@ const Header = () => {
                   <LinkContainer to="/profile">
                     <Nav.Link>{userInfo.data.username}</Nav.Link>
                   </LinkContainer>
+                  <LinkContainer to="/chat">
+                    <Nav.Link>Chat</Nav.Link>
+                  </LinkContainer>
                   <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
                 </>
               ) : (
