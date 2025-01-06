@@ -3,3 +3,5 @@ const app = express();
 
 const port = process.env.PORT || 3002;
 app.listen(port, () => console.log(`Listening on ${port}...`));
+
+app.use(express.static("public"));
